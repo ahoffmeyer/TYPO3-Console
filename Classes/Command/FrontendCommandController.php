@@ -61,14 +61,6 @@ class FrontendCommandController extends CommandController
      */
     protected function makeAbsolute($url)
     {
-        $parsedUrl = parse_url($url);
-        $finalUrl = '';
-        if (!isset($parsedUrl['scheme'])) {
-            $finalUrl .= 'http://';
-        }
-        if (!isset($parsedUrl['host'])) {
-            $finalUrl .= 'localhost';
-        }
-        return $finalUrl . '/' . ltrim($url, '/');
+        return $url;
     }
 }
